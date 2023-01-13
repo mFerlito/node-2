@@ -8,8 +8,7 @@
   </head>
   <body>
     <p>
-      <!-- Qui c'è il link che manda all'autenticazione tramite GitHub, con la query che indica come reindirizzamento
-        (dopo la fase su GitHub) questa stessa pagina -->
+ 
       <a
         href="http://localhost:3000/auth/login?redirectTo=http://localhost:8080/add"
         >Login</a
@@ -36,11 +35,7 @@
     </form>
 
     <script>
-      /*
-      credentials: include
-      serve ad includere il session cookie dal browser quando si cerca di creare il pianeta,
-      perchè l'API deve controllare che sia autenticato
-       */
+     
       async function addPlanet(event) {
         event.preventDefault();
 
