@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      Con serve si può runnare un sito statico, qui lo usiamo per creare questa pagina
+      che poi farà una richiesta al server che vogliamo testare.
+      Passaggi:
+      -Si installa serve npm i --save-dev serve
+      -Si aggiunge al package.json lo script "web": "serve -p 8080 web/"
+      La pagina va avviata col comando npm run web e ctrl + click sul link nel terminale,
+      in corrispondenza di Local
+
+      Se le richieste dall'indirizzo indicato (in questo caso 8080) sono state impostate come valide
+      con cors o simili, e il server la gestisce, allora questa richiesta dovrebbe andare a buon fine.
+    -->
+    <script>
+      async function fetchPlanets() {
+        const response = await fetch("http://localhost:3000/planets");
+        const planets = await response.json();
+
+        console.log({ planets });
+      }
+
+      fetchPlanets();
+    </script>
+  </body>
+</html>

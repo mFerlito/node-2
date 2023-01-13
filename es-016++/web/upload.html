@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      In questa pagina si crea una richiesta all'endpoint planets/1/photo,
+      per modificare il dato dell'entità con indice 1 aggiungendo una foto.
+      in questo caso si utilizza quindi enctype="multipart/form-data" per indicare che si include un file.
+      Ovviamente andrà modificato lo schema in modo da potergli permettere lo stoccaggio di file
+      e si dovrà aggiungere la route che gestisca questa richiesta
+     -->
+    <form
+      action="http://localhost:3000/planets/1/photo"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="file"
+        name="photo"
+        accept=".png, image/png, .jpeg, image/jpeg"
+      />
+      <!-- Con l'attributo accept si indicano i tipi di file accettabili,
+        quindi quelli che sarà possibile vedere durente la ricerca tra le cartelle (browse file) -->
+      <input type="submit" />
+    </form>
+  </body>
+</html>
